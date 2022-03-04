@@ -77,7 +77,7 @@ public class Grafo2
                 for(Nodo n: vecinos){
                     String vertSig=n.getVertice();
                     int costo = n.getCosto();
-                    if (dist.get(ac)+costo<dist.get(vertSig)){
+                    if (dist.get(ac)+costo < dist.get(vertSig)){
                         dist.put(vertSig,dist.get(ac)+costo);
                         cola.offer(vertSig);
                     }

@@ -21,14 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner spinnerAlmacenes;
     Spinner spinnerClientes;
-    Grafo2 Grafo;
+    Grafo Grafo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Grafo = new Grafo2(true);
+        //Grafo = new Grafo2(true);
+        Grafo = new Grafo();
         cargarDatosAlGrafo();
 
         spinnerAlmacenes= findViewById(R.id.spinner);
@@ -110,44 +111,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cargarDatosAlGrafo() {
-        Grafo.agregarVertice("uno");
-        Grafo.agregarVertice("dos");
-        Grafo.agregarVertice("tres");
-        Grafo.agregarVertice("cuatro");
-        Grafo.agregarVertice("cinco");
-        Grafo.agregarVertice("seis");
-        Grafo.agregarVertice("siete");
-        Grafo.agregarVertice("ocho");
-        Grafo.agregarVertice("nueve");
-        Grafo.agregarVertice("diez");
-        Grafo.agregarVertice("Hospital Jesús");
-        Grafo.agregarVertice("Construcción Banco FIE");
-        Grafo.agregarVertice("Ferreteria CAMACHO");
-        Grafo.agregarVertice("Ferreteria Las Lomas");
-        Grafo.agregarVertice("Ferreteria Don Carlos");
-        Grafo.agregarVertice("ALMACEN 1");
+        Grafo.crearVertice("uno");
+        Grafo.crearVertice("dos");
+        Grafo.crearVertice("tres");
+        Grafo.crearVertice("cuatro");
+        Grafo.crearVertice("cinco");
+        Grafo.crearVertice("seis");
+        Grafo.crearVertice("siete");
+        Grafo.crearVertice("ocho");
+        Grafo.crearVertice("nueve");
+        Grafo.crearVertice("diez");
+        Grafo.crearVertice("Hospital Jesús");
+        Grafo.crearVertice("Construcción Banco FIE");
+        Grafo.crearVertice("Ferreteria CAMACHO");
+        Grafo.crearVertice("Ferreteria Las Lomas");
+        Grafo.crearVertice("Ferreteria Don Carlos");
+        Grafo.crearVertice("ALMACEN 1");
 
-        Grafo.agregarArista("uno","nueve",100);
-        Grafo.agregarArista("dos","uno",200);
-        Grafo.agregarArista("dos","siete",500);
-        Grafo.agregarArista("tres","cuatro",300);
-        Grafo.agregarArista("tres","ALMACEN 1",200);
-        Grafo.agregarArista("cuatro","cinco",200);
-        Grafo.agregarArista("cuatro","Ferreteria CAMACHO",300);
-        Grafo.agregarArista("cinco","ocho", 200);
-        Grafo.agregarArista("seis","Ferreteria Las Lomas",700);
-        Grafo.agregarArista("siete","diez",200);
-        Grafo.agregarArista("siete","Construcción Banco FIE",100);
-        Grafo.agregarArista("siete","Ferreteria Don Carlos",400);
-        Grafo.agregarArista("ocho","Ferreteria Las Lomas",900);
-        Grafo.agregarArista("nueve","seis",300);
-        Grafo.agregarArista("nueve","Hospital Jesús",900);
-        Grafo.agregarArista("diez","tres",600);
-        Grafo.agregarArista("Hospital Jesús","Ferreteria Don Carlos",700);
-        Grafo.agregarArista("Ferreteria CAMACHO","ocho",800);
-        Grafo.agregarArista("ALMACEN 1","dos",800);
-        Grafo.agregarArista("ALMACEN 1","nueve",400);
-        Grafo.agregarArista("ALMACEN 1","cinco",500);
+        Grafo.insertarArco("uno","nueve",100);
+        Grafo.insertarArco("dos","uno",200);
+        Grafo.insertarArco("dos","siete",500);
+        Grafo.insertarArco("tres","cuatro",300);
+        Grafo.insertarArco("tres","ALMACEN 1",200);
+        Grafo.insertarArco("cuatro","cinco",200);
+        Grafo.insertarArco("cuatro","Ferreteria CAMACHO",300);
+        Grafo.insertarArco("cinco","ocho", 200);
+        Grafo.insertarArco("seis","Ferreteria Las Lomas",700);
+        Grafo.insertarArco("siete","diez",200);
+        Grafo.insertarArco("siete","Construcción Banco FIE",100);
+        Grafo.insertarArco("siete","Ferreteria Don Carlos",400);
+        Grafo.insertarArco("ocho","Ferreteria Las Lomas",900);
+        Grafo.insertarArco("nueve","seis",300);
+        Grafo.insertarArco("nueve","Hospital Jesús",900);
+        Grafo.insertarArco("diez","tres",600);
+        Grafo.insertarArco("Hospital Jesús","Ferreteria Don Carlos",700);
+        Grafo.insertarArco("Ferreteria CAMACHO","ocho",800);
+        Grafo.insertarArco("ALMACEN 1","dos",800);
+        Grafo.insertarArco("ALMACEN 1","nueve",400);
+        Grafo.insertarArco("ALMACEN 1","cinco",500);
     }
 
     public String obtenerRecorridoCorto(String origen, String destino){

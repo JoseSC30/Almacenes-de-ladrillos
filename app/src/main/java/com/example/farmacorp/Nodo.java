@@ -10,6 +10,7 @@ public class Nodo
 {
     private String vertice;
     private int costo;
+
     public Nodo(String ver, int costo){
         this.vertice=ver;
         this.costo=costo;
@@ -20,4 +21,5 @@ public class Nodo
     public int getCosto(){
         return costo;
     }
+
 }
