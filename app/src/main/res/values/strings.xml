@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Farmacorp</string>
+    <string name="BotonSiguiente">Mostrar Recorrido</string>
+    <string name="tv1">Primer Activity</string>
+
+    <string name="BotonAnterior">Atrás</string>
+
+    <string name="tv2">Segundo Activity</string>
+    <string name="seleccion_user">Seleccione un Almacen</string>
+    <string name="seleccion_sucursar">Seleccion Cliente</string>
+</resources>
