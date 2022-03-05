@@ -222,6 +222,57 @@ public class Grafo
         return sum;
     }
 
+    public HashMap<String,String> dijkstraNombres(String vo){
+        HashMap<String, Integer> dist = new HashMap<>();
+
+        HashMap<String, String> nomb = new HashMap<>();
+
+        PriorityQueue<String> cola = new PriorityQueue<>();
+        Vertice vertice;
+        int i=0;
+        while (i<LVertices.dim()) {
+            vertice =(Vertice)LVertices.getElem(i);
+            dist.put(vertice.getNombre(),Integer.MAX_VALUE);
+
+            nomb.put(vertice.getNombre(),"");
+
+            i++;
+        }
+
+        dist.put(vo,0);
+        cola.add(vo);
+        while(!cola.isEmpty()){
+            String ac = cola.poll();
+
+            Lista vecinos = buscarVertice(ac).LArcos;
+            if (vecinos!=null){
+                Arco n;
+                int e = 0;
+                while (e < vecinos.dim()) {
+                    n = (Arco)vecinos.getElem(e);
+                    String verticeSiguiente = n.getNombreVertD();
+                    int costo = (int) n.getCosto();
+                    if (dist.get(ac)+costo < dist.get(verticeSiguiente)){
+                        dist.put(verticeSiguiente, dist.get(ac) + costo);
+
+                        nomb.put(verticeSiguiente, nomb.get(ac) + ", " + n.getNombreVertD());
+
+                        cola.offer(verticeSiguiente);
+                    }
+                    e++;
+                }
+            }
+        }
+        return nomb;
+    }
+
+    public String caminoMasCortoNombres(String vo, String vd) {
+        String sum = "";
+        HashMap<String,String> mapa = this.dijkstraNombres(vo);
+        sum = mapa.get(vd);
+        return sum;
+    }
+
 //Hacer cantidad de caminos.
 //    public int cantidadCaminos( String x, String y) {
 //        if(buscarVertice(x) != null && buscarVertice(y) == null) {
