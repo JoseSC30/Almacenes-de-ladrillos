@@ -57,7 +57,7 @@ public class SegundoActivity extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     public void mostrarRecorrido(View view){
-        textoRecorrido.setText("El recorrido hacia " + cliente + " es de " + rec + " metros y pasa por" +
+        textoRecorrido.setText("El recorrido desde " + almacen +" hacia " + cliente + " es de " + rec + " metros y pasa por" +
                 " " + recNombres);
     }
 
