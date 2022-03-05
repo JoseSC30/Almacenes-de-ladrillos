@@ -254,8 +254,6 @@ public class Grafo
                     int costo = (int) n.getCosto();
                     if (dist.get(ac)+costo < dist.get(verticeSiguiente)){
                         dist.put(verticeSiguiente, dist.get(ac) + costo);
-
-                        String
                         nomb.put(verticeSiguiente, nomb.get(ac) + ", " + n.getNombreVertD() + " " + costo);
 
                         cola.offer(verticeSiguiente);
